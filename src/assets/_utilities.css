@@ -1,0 +1,6 @@
+@layer utilities{
+  .row{
+    /* 抵銷tailwind.confgi.js中所設定的container padding */
+    @apply -mx-3 flex
+  }
+}
