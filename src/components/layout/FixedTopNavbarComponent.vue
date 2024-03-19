@@ -1,53 +1,57 @@
 <template>
   <nav>
-    <Collapsible v-model:open="isOpen" class="">
-      <!-- 電腦版上方固定區塊 -->
-      <div class="bg-primary container py-4 hidden md:flex justify-between items-center fixed top-0  left-0 right-0 z-50">
-        <!-- BrandLink -->
-        <RouterLink to="/"
-          class="bg-secondary font-Shrikhand text-[32px] relative before:absolute before:h-px before:bg-white before:bottom-0 before:left-0 before:right-full hover:before:left-0 hover:before:right-0 before:transition-all before:duration-300">
-          ALPHABOX+
-        </RouterLink>
-        <!-- 電腦版中間選單group -->
-        <ul class="flex">
-          <li><a href="" class="block px-5 py-2 relative hover:bottom-1 ">產品</a></li>
-          <li><a href="" class="block px-5 py-2 relative hover:bottom-1">關於我們</a></li>
-          <li><a href="" class="block px-5 py-2 relative hover:bottom-1">最新消息</a></li>
-          <li><a href="" class="block px-5 py-2 relative hover:bottom-1">FAQ</a></li>
-          <li><a href="" class="block px-5 py-2 relative hover:bottom-1">聯絡我們</a></li>
-        </ul>
-        <!-- 電腦版右方按鈕group -->
-        <div class="flex items-center">
-          <RouterLink to="/" class="px-3 py-2 relative hover:bottom-1">註冊</RouterLink>
-          <RouterLink to="/" class="px-3 py-2 relative hover:bottom-1">登入</RouterLink>
-          <Button class="text-black bg-white ms-5 hover:bg-neutral">
-            <PointScanIcon />
-            <span class="ms-1">訂閱</span>
-          </Button>
+    <Collapsible v-model:open="isOpen" class="fixed top-0 left-0 bottom-0 right-0 z-10">
+      <!-- 992px以上電腦版上方固定區塊 -->
+      <div class="bg-primary hidden lg:block">
+        <div class="container flex justify-between items-center py-4">
+          <!-- BrandLink -->
+          <RouterLink to="/"
+            class="bg-secondary font-Shrikhand text-[32px] relative before:absolute before:h-px before:bg-white before:bottom-0 before:left-0 before:right-full hover:before:left-0 hover:before:right-0 before:transition-all before:duration-300">
+            ALPHABOX+
+          </RouterLink>
+          <!-- 電腦版中間選單group -->
+          <ul class="flex">
+            <li><a href="" class="block px-3 py-2 lg:px-5 relative hover:bottom-1 ">產品</a></li>
+            <li><a href="" class="block px-3 py-2 lg:px-5 relative hover:bottom-1">關於我們</a></li>
+            <li><a href="" class="block px-3 py-2 lg:px-5 relative hover:bottom-1">最新消息</a></li>
+            <li><a href="" class="block px-3 py-2 lg:px-5 relative hover:bottom-1">FAQ</a></li>
+            <li><a href="" class="block px-3 py-2 lg:px-5 relative hover:bottom-1">聯絡我們</a></li>
+          </ul>
+          <!-- 電腦版右方按鈕group -->
+          <div class="flex items-center">
+            <RouterLink to="/" class="px-3 py-2 relative hover:bottom-1">註冊</RouterLink>
+            <RouterLink to="/" class="px-3 py-2 relative hover:bottom-1">登入</RouterLink>
+            <Button class="text-black bg-white ms-5 hover:bg-neutral">
+              <PointScanIcon />
+              <span class="ms-1">訂閱</span>
+            </Button>
+          </div>
         </div>
       </div>
       <!-- 手機版上方固定區塊 -->
-      <div class="bg-primary container py-3 flex md:hidden items-center justify-between fixed top-0  left-0 right-0 z-50">
-        <RouterLink to="/" class="bg-secondary font-Shrikhand text-[24px]">
-          ALPHABOX+
-        </RouterLink>
-        <CollapsibleTrigger class="block text-end">
-          <HamburgerIcon></HamburgerIcon>
-        </CollapsibleTrigger>
+      <div class="bg-primary lg:hidden ">
+        <div class="container flex items-center justify-between py-3">
+          <RouterLink to="/" class="bg-secondary font-Shrikhand text-[24px]">
+            ALPHABOX+
+          </RouterLink>
+          <CollapsibleTrigger class="block text-end">
+            <HamburgerIcon></HamburgerIcon>
+          </CollapsibleTrigger>
+        </div>
       </div>
       <!-- 點選手機版漢堡跑出的選單 -->
-      <CollapsibleContent class="border-t border-white bg-gradient-to-b from-primary-linearlight to-primary-lineardark absolute top-[69px] left-0 right-0 bottom-0 z-10">
-        <div class="container h-full ">
-          <ul class="h-full flex flex-col items-center justify-between">
-            <li>產品</li>
-            <li>關於我們</li>
-            <li>最新消息</li>
-            <li>FAQ</li>
-            <li>聯絡我們</li>
-            <li>註冊</li>
-            <li>登入</li>
+      <CollapsibleContent class="lg:hidden border-t border-white bg-gradient-to-b from-primary-linearlight to-primary-lineardark absolute top-[68px] left-0 right-0 bottom-0 z-10 overflow-scroll">
+        <div class="container pt-6 h-full">
+          <ul class="grid gap-y-1 justify-center text-center">
+            <li><a href="#" class="py-2 block">產品</a></li>
+            <li><a href="#" class="py-2 block">關於我們</a></li>
+            <li><a href="#" class="py-2 block">最新消息</a></li>
+            <li><a href="#" class="py-2 block">FAQ</a></li>
+            <li><a href="#" class="py-2 block">聯絡我們</a></li>
+            <li><a href="#" class="py-2 block">註冊</a></li>
+            <li><a href="#" class="py-2 block">登入</a></li>
             <li>
-              <Button class="text-black bg-white ms-5 hover:bg-neutral">
+              <Button class="text-black bg-white hover:bg-neutral">
                 <PointScanIcon />
                 <span class="ms-1">訂閱</span>
               </Button>
@@ -86,4 +90,8 @@ export default {
   },
 };
 </script>
-<style scoped></style>
+<style scoped>
+*{
+  /* outline: 1px solid red; */
+}
+</style>

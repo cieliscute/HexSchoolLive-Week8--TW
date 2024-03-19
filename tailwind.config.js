@@ -22,12 +22,11 @@ export default {
       padding: '0.75rem'
     },
     screens: {
-      xs: '480px', // 自定義
-      sm: '640px',
+      sm: '576px',
       md: '768px',
-      lg: '1024px',
-      xl: '1280px',
-      '2xl': '1400px'
+      lg: '992px',
+      xl: '1200px',
+      xxl: '1400px'
     },
     extend: {
       colors: {
@@ -113,8 +112,8 @@ export default {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'collapsible-down': 'collapsible-down .3s cubic-bezier(.84,0,.79,.39)',
-        'collapsible-up': 'collapsible-up .3s cubic-bezier(.84,0,.79,.39)'
+        'collapsible-down': 'collapsible-down .5s cubic-bezier(.84,0,.79,.39)',
+        'collapsible-up': 'collapsible-up .5s cubic-bezier(.84,0,.79,.39)'
       },
       fontFamily: {
         NotoSansTC: ['"Noto Sans TC"', ...defaultTheme.fontFamily.sans],
