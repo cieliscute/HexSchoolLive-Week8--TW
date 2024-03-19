@@ -1,9 +1,9 @@
 <template>
-  <NavBar></NavBar>
+  <FixedTopNavbarComponent></FixedTopNavbarComponent>
   <RouterView></RouterView>
 </template>
 <script>
-import NavBar from '@/components/layout/NavBar.vue';
+import FixedTopNavbarComponent from '@/components/layout/FixedTopNavbarComponent.vue';
 export default {
   data() {
     return {
@@ -11,10 +11,9 @@ export default {
   },
   methods: {
   },
-  components:{
-    NavBar
+  components: {
+    FixedTopNavbarComponent
   }
 };
 </script>
-<style scoped>
-</style>
+<style scoped></style>

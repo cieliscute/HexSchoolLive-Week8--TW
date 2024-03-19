@@ -54,8 +54,8 @@ export default {
         },
         neutral: {
           DEFAULT: '#E9E2F3',
-          linearlight:'#28085C',
-          lineardark:'#000000'
+          linearlight: '#28085C',
+          lineardark: '#000000'
         },
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
@@ -101,7 +101,7 @@ export default {
           from: { height: 'var(--radix-collapsible-content-height)' },
           to: { height: 0 }
         },
-        'spin-reverse':{
+        'spin-reverse': {
           from: {
             transform: 'rotate(360deg)'
           },
@@ -113,8 +113,8 @@ export default {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'collapsible-down': 'collapsible-down 0.2s ease-in-out',
-        'collapsible-up': 'collapsible-up 0.2s ease-in-out',
+        'collapsible-down': 'collapsible-down .3s cubic-bezier(.84,0,.79,.39)',
+        'collapsible-up': 'collapsible-up .3s cubic-bezier(.84,0,.79,.39)'
       },
       fontFamily: {
         NotoSansTC: ['"Noto Sans TC"', ...defaultTheme.fontFamily.sans],
