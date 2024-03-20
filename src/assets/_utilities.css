@@ -1,3 +1,6 @@
 @layer utilities{
   /* 如果有需要自定義樣式可以放在這邊 */
+  .swiper-wrapper {
+      transition-timing-function: linear !important;
+  }
 }

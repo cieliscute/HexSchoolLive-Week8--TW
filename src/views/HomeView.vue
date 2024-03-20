@@ -18,14 +18,25 @@
           <p class="hidden md:block  text-[#AD93CF]">Copyright © 2023 Hexschool.</p>
         </div>
       </div>
-      <!-- 下方Banner圖片區 -->
+      <!-- 下方Banner -->
       <div class="mt-14 relative">
-        <!-- 電腦版中間上方文字 -->
+        <!-- 電腦版Banner中間圖片上方的文字 -->
+        <!-- <div class="absolute left-1/2 -translate-x-1/2 flex flex-col items-center"> -->
+        <!-- letterspacing(i.e. tracking here)的最後一個字後方也會有一個字距，需要用負的margin抵銷 -->
+        <!-- <h2 class="font-Shrikhand text-[32px] tracking-[80px] -mr-20">
+            ALPHABOX+
+          </h2>
+          <h3 class="font-bold tracking-[16px]">擁抱未來科技，專屬您的3D立體投影陪伴機器人</h3>
+        </div> -->
+
         <div class="absolute left-1/2 -translate-x-1/2 flex flex-col items-center">
-          <!-- letterspacing(i.e. tracking here)的最後一個字後方也會有一個字距，需要用負的margin抵銷 -->
-          <h2 class="font-Shrikhand text-[32px] tracking-[80px] -mr-20">ALPHABOX+</h2>
+          <h2 class="font-Shrikhand text-[32px] tracking-[80px] -mr-20">
+            <span
+              class="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 text-transparent bg-clip-text">ALPHABOX+</span>
+          </h2>
           <h3 class="font-bold tracking-[16px]">擁抱未來科技，專屬您的3D立體投影陪伴機器人</h3>
         </div>
+        <!-- 四張主要Banner圖片 -->
         <ul class="grid grid-cols-4 gap-x-8 items-end">
           <li>
             <picture>
@@ -53,10 +64,13 @@
           </li>
         </ul>
       </div>
+      <!-- 跑馬燈間隔線 -->
+      <DividerSwiper class="mt-6"></DividerSwiper>
     </div>
   </section>
   <!-- 什麼是ALPHABOX+區塊 (上方section會有一些元素超出到這個區塊) -->
-  <section class="relative -z-10  bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-neutral-linearlight to-neutral-lineardark from-0% to-70%">
+  <section
+    class="relative -z-10  bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-neutral-linearlight to-neutral-lineardark from-0% to-70%">
     <!-- 圖片裝飾容器 -->
     <div class="absolute top-0 left-0 right-1/2 bottom-0 ">
       <img src="/imgs/carousel_backgroundorigin.png" alt="" class="w-full h-full object-cover opacity-60 blur-lg">
@@ -75,10 +89,14 @@
 </template>
 
 <script>
+import DividerSwiper from '@/decoration/DividerSwiper.vue';
 import AlphaboxRotateIcon from '@/components/icon/AlphaboxRotateIcon.vue'
-export default{
-  components:{
-    AlphaboxRotateIcon
+export default {
+  components: {
+    AlphaboxRotateIcon,
+    DividerSwiper
+  },
+  mounted() {
   }
 }
 </script>

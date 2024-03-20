@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <Collapsible v-model:open="isOpen" class="fixed top-0 left-0 bottom-0 right-0 z-10">
+    <Collapsible v-model:open="isOpen" class="fixed top-0 left-0 bottom-0  right-0 z-10 lg:bottom-full bg-red-200">
       <!-- 992px以上電腦版上方固定區塊 -->
       <div class="bg-primary hidden lg:block">
         <div class="container flex justify-between items-center py-4">
