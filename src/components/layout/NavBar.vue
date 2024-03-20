@@ -1,5 +1,6 @@
 <template>
-  <Collapsible v-model:open="isOpen" class="bg-primary fixed top-0 z-50 left-0 right-0">
+  <!-- Navbar設定z-50避免被下方區塊給蓋過 -->
+  <Collapsible v-model:open="isOpen" class="bg-primary fixed top-0 left-0 right-0">
     <!-- 電腦版 -->
       <div class="hidden md:flex py-4 justify-between items-center">
         <!-- BrandLink -->
