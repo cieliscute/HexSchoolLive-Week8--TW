@@ -1,6 +1,6 @@
 <template>
-  <FixedTopNavbarComponent></FixedTopNavbarComponent>
   <RouterView></RouterView>
+  <FixedTopNavbarComponent></FixedTopNavbarComponent>
 </template>
 <script>
 import FixedTopNavbarComponent from '@/components/layout/FixedTopNavbarComponent.vue';

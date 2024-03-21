@@ -26,7 +26,9 @@ export default {
       md: '768px',
       lg: '992px',
       xl: '1200px',
-      xxl: '1400px'
+      xxl: '1400px',
+      '3xl': '1536px',
+      'fhd':'1920px'
     },
     extend: {
       colors: {
@@ -113,7 +115,7 @@ export default {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'collapsible-down': 'collapsible-down .5s cubic-bezier(.84,0,.79,.39)',
-        'collapsible-up': 'collapsible-up .5s cubic-bezier(.84,0,.79,.39)'
+        'collapsible-up': 'collapsible-up .5s cubic-bezier(.84,0,.79,.39)',
       },
       fontFamily: {
         NotoSansTC: ['"Noto Sans TC"', ...defaultTheme.fontFamily.sans],

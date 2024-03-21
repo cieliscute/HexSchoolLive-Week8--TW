@@ -1,8 +1,8 @@
 <template>
   <nav>
-    <Collapsible v-model:open="isOpen" class="fixed top-0 left-0 bottom-0  right-0 z-10 lg:bottom-full bg-red-200">
+    <Collapsible v-model:open="isOpen" class="">
       <!-- 992px以上電腦版上方固定區塊 -->
-      <div class="bg-primary hidden lg:block">
+      <div class=" bg-primary hidden lg:block fixed z-40 top-0 left-0 right-0">
         <div class="container flex justify-between items-center py-4">
           <!-- BrandLink -->
           <RouterLink to="/"
@@ -29,7 +29,7 @@
         </div>
       </div>
       <!-- 手機版上方固定區塊 -->
-      <div class="bg-primary lg:hidden ">
+      <div class="bg-primary lg:hidden fixed z-40 top-0 left-0 right-0">
         <div class="container flex items-center justify-between py-3">
           <RouterLink to="/" class="bg-secondary font-Shrikhand text-[24px]">
             ALPHABOX+
@@ -40,9 +40,9 @@
         </div>
       </div>
       <!-- 點選手機版漢堡跑出的選單 -->
-      <CollapsibleContent class="lg:hidden border-t border-white bg-gradient-to-b from-primary-linearlight to-primary-lineardark absolute top-[68px] left-0 right-0 bottom-0 z-10 overflow-scroll">
+      <CollapsibleContent class="lg:hidden border-t border-white bg-gradient-to-b from-primary-linearlight to-primary-lineardark fixed z-50 top-[68px] left-0 right-0 bottom-0 overflow-scroll" >
         <div class="container pt-6 h-full">
-          <ul class="grid gap-y-1 justify-center text-center">
+          <ul class="grid gap-y-1 sm:gap-y-2 md:gap-y-4 justify-center text-center">
             <li><a href="#" class="py-2 block">產品</a></li>
             <li><a href="#" class="py-2 block">關於我們</a></li>
             <li><a href="#" class="py-2 block">最新消息</a></li>
@@ -91,7 +91,4 @@ export default {
 };
 </script>
 <style scoped>
-*{
-  /* outline: 1px solid red; */
-}
 </style>

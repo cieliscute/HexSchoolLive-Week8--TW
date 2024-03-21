@@ -1,8 +1,8 @@
 <template>
   <!-- 首頁第一個區塊，pt是為了抵銷nav的fixed top -->
-  <section class="bg-gradient-to-b from-primary-linearlight to-primary-lineardark h-[960px] pt-[68px] md:pt-20">
+  <section class="relative bg-gradient-to-b from-primary-linearlight to-primary-lineardark pt-[68px] md:pt-20 flex justify-center">
     <!-- 左右padding -->
-    <div class="pt-7 lg:pt-14 px-3 md:px-20 border-t border-white">
+    <div class="pt-7 lg:pt-14 px-3 md:px-20 border-t border-white max-w-screen-fhd w-full relative">
       <!-- 上方四欄(最新消息、spin logo、copyright) -->
       <div class="grid grid-cols-4 gap-x-8">
         <div class="hidden lg:flex col-span-4 lg:col-span-1 items-end border-b border-white">
@@ -19,44 +19,48 @@
         </div>
       </div>
       <!-- 下方Banner -->
-      <div class="mt-14 relative">
+      <div class="mt-14">
         <!-- 電腦版Banner中間圖片上方的文字 -->
-        <!-- <div class="absolute left-1/2 -translate-x-1/2 flex flex-col items-center"> -->
-        <!-- letterspacing(i.e. tracking here)的最後一個字後方也會有一個字距，需要用負的margin抵銷 -->
-        <!-- <h2 class="font-Shrikhand text-[32px] tracking-[80px] -mr-20">
+        <div class="absolute left-1/2 -translate-x-1/2 flex flex-col items-center">
+          <!-- letterspacing(i.e. tracking here)的最後一個字後方也會有一個字距，需要用負的margin抵銷 -->
+          <h2 class="font-Shrikhand 
+          lg:text-base xl:text-2xl xxl:text-3xl  
+          min-[1920px]:text-[32px]
+          lg:tracking-[36px] lg:-mr-9 
+          xl:tracking-[44px] xl:-mr-11
+          xxl:tracking-[48px] xxl:-mr-12
+          3xl:tracking-[64px] 3xl:-mr-16
+          fhd:tracking-[80px] fhd:-mr-20">
             ALPHABOX+
           </h2>
-          <h3 class="font-bold tracking-[16px]">擁抱未來科技，專屬您的3D立體投影陪伴機器人</h3>
-        </div> -->
-
-        <div class="absolute left-1/2 -translate-x-1/2 flex flex-col items-center">
-          <h2 class="font-Shrikhand text-[32px] tracking-[80px] -mr-20">
-            <span
-              class="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 text-transparent bg-clip-text">ALPHABOX+</span>
-          </h2>
-          <h3 class="font-bold tracking-[16px]">擁抱未來科技，專屬您的3D立體投影陪伴機器人</h3>
+          <h3 class="font-bold
+          lg:text-xs xl:text-sm xxl:text-base
+          lg:tracking-[4px] lg:-mr-1 
+          xl:tracking-[6px] xl:-mr-1.5
+          xxl:tracking-[8px] xxl:-mr-2
+          fhd:tracking-[16px] fhd:-mr-4">擁抱未來科技，專屬您的3D立體投影陪伴機器人</h3>
         </div>
         <!-- 四張主要Banner圖片 -->
         <ul class="grid grid-cols-4 gap-x-8 items-end">
-          <li>
+          <li class="hover:shadow-[0px_0px_16px_8px_rgba(143,0,255,0.8)]">
             <picture>
               <source>
               <img src="/desktop/diane.png" alt="diane首頁" class="object-cover w-full">
             </picture>
           </li>
-          <li>
+          <li class="hover:shadow-[0px_0px_16px_8px_rgba(143,0,255,0.8)]">
             <picture>
               <source>
               <img src="/desktop/felix.png" alt="felix首頁" class="w-full">
             </picture>
           </li>
-          <li>
+          <li class="hover:shadow-[0px_0px_16px_8px_rgba(143,0,255,0.8)]">
             <picture>
               <source>
               <img src="/desktop/karina.png" alt="karina首頁" class="w-full">
             </picture>
           </li>
-          <li>
+          <li class="hover:shadow-[0px_0px_16px_8px_rgba(143,0,255,0.8)]">
             <picture>
               <source>
               <img src="/desktop/vito.png" alt="vito首頁" class="w-full object-cover">
@@ -100,5 +104,8 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style>
+*{
+  outline: 1px solid red;
+}
 </style>
