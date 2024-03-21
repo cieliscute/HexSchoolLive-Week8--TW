@@ -31,7 +31,7 @@
       <!-- 手機版上方固定區塊 -->
       <div class="bg-primary lg:hidden fixed z-40 top-0 left-0 right-0">
         <div class="container flex items-center justify-between py-3">
-          <RouterLink to="/" class="bg-secondary font-Shrikhand text-[24px]">
+          <RouterLink to="/" class="bg-secondary font-Shrikhand text-2xl">
             ALPHABOX+
           </RouterLink>
           <CollapsibleTrigger class="block text-end">
