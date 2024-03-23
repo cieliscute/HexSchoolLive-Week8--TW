@@ -81,7 +81,7 @@
         </ul>
       </div>
       <!-- 跑馬燈間隔線 -->
-      <DividerSwiper class="mt-6"></DividerSwiper>
+      <DividerSwiper class="mt-6 h-10"></DividerSwiper>
     </div>
   </section>
   <!-- 什麼是ALPHABOX+區塊 (上方section會有一些元素超出到這個區塊) -->
@@ -105,7 +105,7 @@
 </template>
 
 <script>
-import DividerSwiper from '@/decoration/DividerSwiper.vue';
+import DividerSwiper from '@/components/decoration/DividerSwiper.vue';
 import AlphaboxRotateIcon from '@/components/icon/AlphaboxRotateIcon.vue'
 export default {
   components: {
