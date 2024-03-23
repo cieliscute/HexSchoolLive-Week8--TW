@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div :class="{'l-prevent-scroll':0}" class="w-full">
+  <div :class="{'l-prevent-scroll':0}">
     <RouterView />
   </div>
 </template>
