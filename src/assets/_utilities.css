@@ -1,6 +1,13 @@
 @layer utilities{
-  /* 如果有需要自定義樣式可以放在這邊 */
+  /* 在手機版nav open的時候禁止背景滾動條滾動 */
   .l-prevent-scroll {
     @apply fixed w-full
+  }
+  /* 滿寬的容器 */
+  .l-container-fluid{
+    @apply max-w-screen-fhd w-full px-3 lg:px-20 
+  }
+  .container{
+    @apply max-w-screen-xl
   }
 }

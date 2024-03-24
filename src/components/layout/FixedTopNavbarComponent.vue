@@ -3,7 +3,7 @@
     <Collapsible v-model:open="isOpen" class="">
       <!-- 992px以上電腦版上方固定區塊 -->
       <div class=" bg-primary hidden lg:block fixed z-40 top-0 left-0 right-0">
-        <div class="container flex justify-between items-center py-4">
+        <div class="container py-4 flex justify-between items-center">
           <!-- BrandLink -->
           <RouterLink to="/"
             class="bg-secondary font-Shrikhand text-[32px] relative before:absolute before:h-px before:bg-white before:bottom-0 before:left-0 before:right-full hover:before:left-0 hover:before:right-0 before:transition-all before:duration-300">
