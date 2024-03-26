@@ -9,8 +9,9 @@
           <RouterLink to="/" class="text-sm">最新消息！新版本 v15.4 釋出，搶先體驗！</RouterLink>
         </div>
         <div class="mt-8 md:mt-0 col-span-4 md:col-span-2 flex justify-center">
-          <AlphaboxRotateIcon class="animate-[spin-reverse_20s_linear_infinite] w-[196px] h-[196px]">
-          </AlphaboxRotateIcon>
+          <div class="animate-[spin_20s_linear_infinite_reverse]">
+            <AlphaboxRotateIcon class="lg:hover:scale-110 transition-transform duration-500"></AlphaboxRotateIcon>
+          </div>
         </div>
         <div
           class="col-span-4 md:col-span-1 flex flex-col justify-between border-t border-white order-first md:order-last pt-2">
@@ -44,43 +45,42 @@
           fhd:tracking-[16px] fhd:-mr-4">擁抱未來科技，專屬您的3D立體投影陪伴機器人</h3>
         </div>
         <!-- 四張主要Banner圖片 -->
-        <ul class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-4  lg:gap-y-0 lg:grid-cols-4 lg:gap-x-8 items-end">
+        <ul class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-4 lg:grid-cols-4 lg:gap-y-0  lg:gap-x-8 items-end">
           <li class="hover:shadow-[0px_0px_16px_8px_rgba(143,0,255,0.8)] relative">
             <p class="font-Shrikhand absolute top-4 left-0 right-0 text-center text-[32px]">Diane</p>
             <picture>
-              <source>
-              <img src="/desktop/diane.png" alt="diane首頁"
-                class="object-cover w-full aspect-square lg:aspect-auto object-top">
+              <source media="(min-width:992px)" srcset="/desktop/diane.png">
+              <img src="/mobile/diane_mobile.png" alt="diane首頁" class="object-cover w-full aspect-square lg:aspect-auto object-top">
             </picture>
           </li>
           <li class="hover:shadow-[0px_0px_16px_8px_rgba(143,0,255,0.8)] relative">
             <p class="font-Shrikhand absolute top-4 left-0 right-0 text-center text-[32px]">Felix</p>
             <picture>
-              <source>
-              <img src="/desktop/felix.png" alt="felix首頁"
+              <source media="(min-width:992px)" srcset="/desktop/felix.png">
+              <img src="/mobile/felix_mobile.png" alt="felix首頁"
                 class="object-cover w-full aspect-square lg:aspect-auto object-top">
             </picture>
           </li>
           <li class="hover:shadow-[0px_0px_16px_8px_rgba(143,0,255,0.8)] relative">
             <p class="font-Shrikhand absolute top-4 left-0 right-0 text-center text-[32px]">Karina</p>
             <picture>
-              <source>
-              <img src="/desktop/karina.png" alt="karina首頁"
+              <source media="(min-width:992px)" srcset="/desktop/karina.png">
+              <img src="/mobile/karina_mobile.png" alt="karina首頁"
                 class="object-cover w-full aspect-square lg:aspect-auto object-top">
             </picture>
           </li>
           <li class="hover:shadow-[0px_0px_16px_8px_rgba(143,0,255,0.8)] relative">
             <p class="font-Shrikhand absolute top-4 left-0 right-0 text-center text-[32px]">Vito</p>
             <picture>
-              <source>
-              <img src="/desktop/vito.png" alt="vito首頁"
+              <source media="(min-width:992px)" srcset="/desktop/vito.png">
+              <img src="/mobile/vito_mobile.png" alt="vito首頁"
                 class="object-cover w-full aspect-square lg:aspect-auto object-top">
             </picture>
           </li>
         </ul>
       </div>
       <!-- 跑馬燈間隔線 -->
-      <DividerSwiper class="mt-6 h-10"></DividerSwiper>
+      <DividerSwiperElement class="mt-6 h-10"></DividerSwiperElement>
     </div>
   </section>
   <!-- 什麼是ALPHABOX+區塊 (上方section會有一些元素超出到這個區塊) -->
@@ -95,23 +95,24 @@
       <h2>ALPHABOX+</h2>
     </div>
     <!-- Swiper區塊 -->
-    <div class="l-container-fulid relative">
-      <WhatIsAlphaboxSwiper class="h-20"></WhatIsAlphaboxSwiper>
-      <div class="w-full py-20 h-10 bg-blue-100">跑馬燈保留區</div>
+    <div class="l-container-fluid relative mt-8">
+      <WhatIsAlphaboxSwiper></WhatIsAlphaboxSwiper>
+      <DividerSwiperElement class="mt-8 h-10"></DividerSwiperElement>
     </div>
   </section>
 </template>
 
 <script>
-import DividerSwiper from '@/components/decoration/DividerSwiper.vue';
+import DividerSwiperElement from '@/components/decoration/DividerSwiperElement.vue';
 import AlphaboxRotateIcon from '@/components/icon/AlphaboxRotateIcon.vue'
 import WhatIsAlphaboxSwiper from '@/components/layout/WhatIsAlphaboxSwiper.vue';
+
 
 export default {
   components: {
     AlphaboxRotateIcon,
-    DividerSwiper,
-    WhatIsAlphaboxSwiper
+    DividerSwiperElement,
+    WhatIsAlphaboxSwiper,
   },
   mounted() {
   }

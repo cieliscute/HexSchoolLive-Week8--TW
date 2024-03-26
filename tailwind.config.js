@@ -102,12 +102,12 @@ export default {
           from: { height: 'var(--radix-collapsible-content-height)' },
           to: { height: 0 }
         },
-        'spin-reverse': {
+        'hoverscale': {
           from: {
-            transform: 'rotate(360deg)'
+            transform: 'scale(1)'
           },
           to: {
-            transform: 'rotate(0deg)'
+            transform: 'scale(1.5)'
           }
         }
       },
