@@ -3,6 +3,8 @@
   >
     <swiper-slide class=" from-primary-linearlight to-primary-lineardark w-full bg-gradient-to-r to-80%"></swiper-slide>
     <swiper-slide class=" from-primary-lineardark to-primary-linearlight w-full bg-gradient-to-r from-20%"></swiper-slide>
+    <swiper-slide class=" from-primary-linearlight to-primary-lineardark w-full bg-gradient-to-r to-80%"></swiper-slide>
+    <swiper-slide class=" from-primary-lineardark to-primary-linearlight w-full bg-gradient-to-r from-20%"></swiper-slide>
   </swiper>
 </template>
 <script>
