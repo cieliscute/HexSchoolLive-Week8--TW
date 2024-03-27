@@ -1,6 +1,6 @@
 <template>
   <div class="swiper" ref="swiper">
-    <div class="swiper-wrapper">
+    <div class="swiper-wrapper cursor-default">
       <!-- Slides -->
       <div class="swiper-slide  from-primary-linearlight to-primary-lineardark w-full bg-gradient-to-r to-80%"></div>
       <div class="swiper-slide   from-primary-lineardark to-primary-linearlight w-full bg-gradient-to-r from-20%"></div>
@@ -32,7 +32,8 @@ export default {
       },
       loop: true,
       speed:1000,
-      slidesPerView:1
+      slidesPerView:1,
+      allowTouchMove:false,
     });
   }
 };
