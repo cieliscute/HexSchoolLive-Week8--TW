@@ -15,12 +15,16 @@
       <swiper-slide class="relative" v-for="(item,index) in dataAry" :key="`${index}index`">
         <img :src="item.picURL" :alt="`${item.title}圖片`" class="w-full aspect-square lg:aspect-[12/5] object-center  object-cover">
         <div class="text-bold text-start lg:text-end absolute bottom-4 right-0 left-4 lg:right-10 lg:top-1/2 lg:-translate-y-1/2">
-          <p class="font-Shrikhand text-white text-[64px] md:text-9xl lg:text-8xl">{{ item.index }}</p>
+          <p class="font-Shrikhand text-white text-[64px] md:text-9xl lg:text-7xl xxl:text-8xl">{{ item.index }}</p>
           <p class="text-white
           text-2xl tracking-[24px] -mr-6
           md:text-6xl
-          lg:text-[32px] lg:tracking-[32px] lg:-mr-8">{{ item.title }}</p>
-          <p class="text-white mt-2 lg:mt-4
+          lg:text-3xl lg:tracking-[20px] lg:-mr-5
+          xxl:text-[32px] xxl:tracking-[32px] xxl:-mr-8
+          ">
+            {{ item.title }}
+          </p>
+          <p class="text-white mt-2 xxl:mt-4
           text-base md:text-2xl lg:text-base
           ">{{ item.content }}</p>
         </div>

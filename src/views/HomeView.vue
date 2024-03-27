@@ -1,8 +1,18 @@
 <template>
+  <!-- 滿版覆蓋畫面 -->
+  <template v-if="isLoading">
+    <div class="absolute z-50 top-0 left-0 right-0 bottom-0 
+    flex items-center justify-center bg-white
+    ">
+      <div class="flex flex-col items-center">
+        <img src="/desktop/Animation-Loading.gif" alt="loading圖片" class="w-20 h-20">
+        <p class="text-black font-black">Loading</p>
+      </div>
+    </div>
+  </template>
   <!-- 首頁第一個區塊，pt是為了抵銷nav的fixed top,-mb是為了讓圖片可以超出到下方的區塊 -->
   <!-- 如果需要修改位移請從src/assets/_utilities.css內修改變數 -->
-  <section
-    class="relative bg-gradient-to-b from-primary-linearlight to-primary-lineardark pt-[68px] lg:pt-20 flex justify-center
+  <section class="relative bg-gradient-to-b from-primary-linearlight to-primary-lineardark pt-[68px] lg:pt-20 flex justify-center
     -mb-[var(--offset-banner)] sm:-mb-[var(--offset-banner-sm)] lg:-mb-[var(--offset-banner-lg)] xxl:-mb-[var(--offset-banner-xxl)]
     ">
     <!-- 左右padding -->
@@ -50,7 +60,7 @@
         </div>
         <!-- 四張主要Banner圖片 -->
         <ul class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-4 lg:grid-cols-4 lg:gap-y-0  lg:gap-x-8 items-end">
-          <li class="hover:shadow-[0px_0px_16px_8px_rgba(143,0,255,0.8)] relative">
+          <li class="hover:shadow-[0px_0px_16px_8px_rgba(143,0,255,0.8)] duration-300 relative">
             <p class="font-Shrikhand absolute top-4 left-0 right-0 text-center text-[32px]">Diane</p>
             <picture>
               <source media="(min-width:992px)" srcset="/desktop/diane.png">
@@ -58,7 +68,7 @@
                 class="object-cover w-full aspect-square lg:aspect-auto object-top">
             </picture>
           </li>
-          <li class="hover:shadow-[0px_0px_16px_8px_rgba(143,0,255,0.8)] relative">
+          <li class="hover:shadow-[0px_0px_16px_8px_rgba(143,0,255,0.8)] duration-300 relative">
             <p class="font-Shrikhand absolute top-4 left-0 right-0 text-center text-[32px]">Felix</p>
             <picture>
               <source media="(min-width:992px)" srcset="/desktop/felix.png">
@@ -66,7 +76,7 @@
                 class="object-cover w-full aspect-square lg:aspect-auto object-top">
             </picture>
           </li>
-          <li class="hover:shadow-[0px_0px_16px_8px_rgba(143,0,255,0.8)] relative">
+          <li class="hover:shadow-[0px_0px_16px_8px_rgba(143,0,255,0.8)] duration-300 relative">
             <p class="font-Shrikhand absolute top-4 left-0 right-0 text-center text-[32px]">Karina</p>
             <picture>
               <source media="(min-width:992px)" srcset="/desktop/karina.png">
@@ -74,7 +84,7 @@
                 class="object-cover w-full aspect-square lg:aspect-auto object-top">
             </picture>
           </li>
-          <li class="hover:shadow-[0px_0px_16px_8px_rgba(143,0,255,0.8)] relative">
+          <li class="hover:shadow-[0px_0px_16px_8px_rgba(143,0,255,0.8)] duration-300 relative">
             <p class="font-Shrikhand absolute top-4 left-0 right-0 text-center text-[32px]">Vito</p>
             <picture>
               <source media="(min-width:992px)" srcset="/desktop/vito.png">
@@ -89,14 +99,14 @@
     </div>
   </section>
   <!-- 什麼是ALPHABOX+區塊 (上方section會有一些元素超出到這個區塊) -->
-  <section
-    class="relative l-radial-gradient pb-10">
+  <section class="relative l-radial-gradient pb-10">
     <!-- 圖片裝飾容器(半透明，滿高,左半邊 背景圖片) -->
     <div class="absolute top-0 left-0 right-1/2 bottom-0">
-      <img src="/imgs/carousel_backgroundorigin.png" alt="" class="w-full h-full object-cover opacity-60 blur-lg select-none" draggable="false">
+      <img src="/imgs/carousel_backgroundorigin.png" alt=""
+        class="w-full h-full object-cover opacity-60 blur-lg select-none" draggable="false">
     </div>
     <!-- 什麼是ALPHABOX+ -->
-    <div class="l-container-fluid relative 
+    <div class="l-container-fluid relative
     pt-[var(--offset-banner)] sm:pt-[var(--offset-banner-sm)] 
     lg:pt-[var(--offset-banner-lg)]  xxl:pt-[var(--offset-banner-xxl)]
     font-bold border-b border-white 
@@ -106,7 +116,7 @@
     pb-5 md:pb-4
     ">
       <h2 class="pt-4 md:pt-2">什麼是</h2>
-      <h2 class="mt-3">ALPHABOX+</h2>
+      <h2 class="mt-3 leading-normal">ALPHABOX+</h2>
     </div>
     <!-- Swiper區塊 -->
     <div class="l-container-fluid relative mt-8">
@@ -119,21 +129,38 @@
   </section>
 </template>
 
-<script>
+<script setup>
 import AlphaboxRotateIcon from '@/components/icon/AlphaboxRotateIcon.vue'
 import WhatIsAlphaboxSwiper from '@/components/layout/WhatIsAlphaboxSwiper.vue';
 import DividerComponent from '@/components/decoration/DividerComponent.vue';
+import { onMounted, ref } from 'vue'
 
+const isLoading = ref(true)
+onMounted(() => {
+  const images = document.querySelectorAll('img');
+  let loadedImageCount = 0;
 
-export default {
-  components: {
-    AlphaboxRotateIcon,
-    WhatIsAlphaboxSwiper,
-    DividerComponent
-  },
-  mounted() {
-  }
-}
+  // 定義圖片加載完成的處理函式
+  const handleImageLoad = () => {
+    loadedImageCount++;
+
+    // 當所有圖片都已加載完成時，關閉 isLoading
+    if (loadedImageCount === images.length) {
+      isLoading.value = false;
+    }
+  };
+
+  // 將加載完成事件附加到每個圖片元素上
+  images.forEach(image => {
+    // 如果圖片已經加載完成，直接處理
+    if (image.complete) {
+      handleImageLoad();
+    } else {
+      // 否則，等待圖片加載完成
+      image.addEventListener('load', handleImageLoad);
+    }
+  });
+})
+
 </script>
-<style>
-</style>
+<style></style>
