@@ -15,9 +15,7 @@
   <section class="relative bg-gradient-to-b from-primary-linearlight to-primary-lineardark pt-[68px] lg:pt-20 flex justify-center
     -mb-[var(--offset-banner)] sm:-mb-[var(--offset-banner-sm)] lg:-mb-[var(--offset-banner-lg)] xxl:-mb-[var(--offset-banner-xxl)]
     ">
-    <!-- 左右padding -->
     <div class="l-container-fluid pt-7 lg:pt-14 border-t border-white relative">
-      <!-- 上方四欄(最新消息、spin logo、copyright) -->
       <div class="grid grid-cols-4 gap-x-8">
         <div class="hidden md:flex col-span-4 md:col-span-1 items-end border-b border-white  pb-1">
           <RouterLink to="/" class="text-sm">最新消息！新版本 v15.4 釋出，搶先體驗！</RouterLink>
@@ -33,32 +31,33 @@
           <p class="hidden md:block text-[#AD93CF] text-sm">Copyright © 2023 Hexschool.</p>
         </div>
       </div>
-      <!-- 下方Banner -->
-      <div class="mt-8 md:mt-14 relative z-10">
-        <!-- Banner圖片上方的文字 -->
-        <div class="mb-4 lg:absolute left-1/2 lg:-translate-x-1/2 flex flex-col items-center">
-          <!-- letterspacing(i.e. tracking here)的最後一個字後方也會有一個字距，需要用負的margin抵銷 -->
-          <h2 class="font-Shrikhand 
-          text-xl tracking-[20px] -mr-5
-          lg:text-base xl:text-2xl xxl:text-3xl  
-          min-[1920px]:text-[32px]
-          lg:tracking-[36px] lg:-mr-9 
-          xl:tracking-[44px] xl:-mr-11
-          xxl:tracking-[48px] xxl:-mr-12
-          3xl:tracking-[64px] 3xl:-mr-16
-          fhd:tracking-[80px] fhd:-mr-20">
-            ALPHABOX+
-          </h2>
-          <h3 class="font-bold text-center
+      <div class="mt-8 md:mt-14 relative z-10 ">
+        <div class="w-full mb-4 flex flex-col lg:absolute lg:left-1/2 lg:-translate-x-1/2">
+          <div class="tracking-container">
+            <h2 class="font-Shrikhand tracking-130
+            text-xl lg:text-base xl:text-2xl xxl:text-3xl fhd:text-[32px]
+            bg-red-200
+            ">ALPHABOX+</h2>
+            <h3 class="font-bold tracking-20 min-[375px]:tracking-30
+            text-base lg:text-xs xl:text-sm xxl:text-base
+            ">
+              擁抱未來科技，專屬您的3D立體投影陪伴機器人
+            </h3>
+          </div>
+          <!-- <h3 class="font-bold
           text-base tracking-[3.2px] -mr-[3.2px] 
           min-[375px]:tracking-[4.8px] min-[375px]:-mr-[4.8px]
           lg:text-xs xl:text-sm xxl:text-base
           lg:tracking-[4px] lg:-mr-1 
           xl:tracking-[6px] xl:-mr-1.5
           xxl:tracking-[8px] xxl:-mr-2
-          fhd:tracking-[16px] fhd:-mr-4">擁抱未來科技，專屬您的3D立體投影陪伴機器人</h3>
+          fhd:tracking-[16px] fhd:-mr-4">擁抱未來科技，專屬您的3D立體投影陪伴機器人</h3> -->
+          <!-- <h3 class="font-bold tracking-20 min-[375px]:tracking-30
+          text-base lg:text-xs xl:text-sm xxl:text-base
+          ">
+            擁抱未來科技，專屬您的3D立體投影陪伴機器人
+          </h3> -->
         </div>
-        <!-- 四張主要Banner圖片 -->
         <ul class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-4 lg:grid-cols-4 lg:gap-y-0  lg:gap-x-8 items-end">
           <li class="hover:shadow-[0px_0px_16px_8px_rgba(143,0,255,0.8)] duration-300 relative">
             <p class="font-Shrikhand absolute top-4 left-0 right-0 text-center text-[32px]">Diane</p>
@@ -94,38 +93,33 @@
           </li>
         </ul>
       </div>
-      <!-- 跑馬燈間隔線 -->
       <DividerComponent class="mt-10 h-10"></DividerComponent>
     </div>
   </section>
-  <!-- 什麼是ALPHABOX+區塊 (上方section會有一些元素超出到這個區塊) -->
   <section class="relative l-radial-gradient pb-10">
-    <!-- 圖片裝飾容器(半透明，滿高,左半邊 背景圖片) -->
     <div class="absolute top-0 left-0 right-1/2 bottom-0">
       <img src="/imgs/carousel_backgroundorigin.png" alt=""
         class="w-full h-full object-cover opacity-60 blur-lg select-none" draggable="false">
     </div>
-    <!-- 什麼是ALPHABOX+ -->
     <div class="l-container-fluid relative
     pt-[var(--offset-banner)] sm:pt-[var(--offset-banner-sm)] 
     lg:pt-[var(--offset-banner-lg)]  xxl:pt-[var(--offset-banner-xxl)]
-    font-bold border-b border-white 
-    text-2xl tracking-[24px]
-    md:text-3xl md:tracking-[30px]
-    lg:text-5xl lg:tracking-[48px]
+    font-bold border-b border-white tracking-100
+    text-2xl md:text-3xl lg:text-5xl 
     pb-5 md:pb-4
     ">
-      <h2 class="pt-4 md:pt-2">什麼是</h2>
-      <h2 class="mt-3 leading-normal">ALPHABOX+</h2>
+      <!-- <h2 class="pt-4 md:pt-2">什麼是</h2>
+      <h2 class="mt-3 leading-normal">ALPHABOX+</h2> -->
     </div>
-    <!-- Swiper區塊 -->
     <div class="l-container-fluid relative mt-8">
       <WhatIsAlphaboxSwiper></WhatIsAlphaboxSwiper>
       <DividerComponent class="mt-8 h-10"></DividerComponent>
     </div>
   </section>
-  <!-- 最新消息區塊 -->
   <section class="l-radial-gradient py-20">
+    <div class="container py-40 outline">
+      <h2 class="text-9xl text-end">最新消息</h2>
+    </div>
   </section>
 </template>
 
@@ -136,7 +130,7 @@ import DividerComponent from '@/components/decoration/DividerComponent.vue';
 import { onMounted, ref } from 'vue'
 
 const isLoading = ref(true)
-onMounted(() => {
+const checkLoadComplete=()=>{
   const images = document.querySelectorAll('img');
   let loadedImageCount = 0;
 
@@ -160,7 +154,14 @@ onMounted(() => {
       image.addEventListener('load', handleImageLoad);
     }
   });
+}
+onMounted(() => {
+  checkLoadComplete()
 })
 
 </script>
-<style></style>
+<style>
+*{
+  outline:1px solid red
+}
+</style>

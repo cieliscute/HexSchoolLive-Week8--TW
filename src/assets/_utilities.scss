@@ -1,0 +1,59 @@
+@layer utilities{
+  :root{
+    --offset-banner:176px;
+    --offset-banner-sm:170px;
+    --offset-banner-lg:140px;
+    --offset-banner-xxl:184px;
+    /* --offset-banner-xxl:10px; */
+  }
+  /* 在手機版nav open的時候禁止背景滾動條滾動 */
+  .l-prevent-scroll {
+    @apply fixed w-full
+  }
+  /* 滿寬的容器 */
+  .l-container-fluid{
+    @apply w-full max-w-screen-fhd px-3 sm:px-5 md:px-10 xl:px-20 
+  }
+  /* container的斷點參考bootstrap */
+  .container{
+    @apply w-full sm:max-w-[540px] md:max-w-[720px] lg:max-w-[920px] xl:max-w-[1140px] xxl:max-w-[1320px]
+  }
+  .l-radial-gradient{
+    @apply bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-neutral-linearlight to-neutral-lineardark from-0% to-70%
+  }
+  // 官方文件有時預設會將line-height改成1，重設為1.5
+  .text-xs,.text-sm,.text-base,.text-lg,.text-xl,.text-2xl,.text-3xl,.text-4xl,.text-5xl,.text-6xl,.text-7xl,.text-8xl,.text-9xl{
+    @apply leading-normal
+  }
+  .tracking-container{
+    @apply w-full 
+  }
+  .tracking-20{
+    letter-spacing: .2em;
+    @apply -mr-[2em]
+  }
+  .tracking-30{
+    letter-spacing: .3em;
+    @apply -mr-[3em]
+  }
+  .tracking-100{
+    letter-spacing: 1em;
+    @apply -mr-[1em]
+  }
+  .tracking-130{
+    letter-spacing: 1.3em;
+    @apply -mr-[1.3em]
+  }
+  .tracking-200{
+    letter-spacing: 2em;
+    @apply -mr-[2em]
+  }
+  .tracking-250{
+    letter-spacing: 2.5em;
+    @apply -mr-[2.5em]
+  }
+  .tracking-300{
+    letter-spacing: 3em;
+    @apply -mr-[3em]
+  }
+}
