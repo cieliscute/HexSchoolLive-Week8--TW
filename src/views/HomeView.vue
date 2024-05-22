@@ -1,5 +1,7 @@
 <template>
-  <!-- 滿版覆蓋畫面 -->
+  <!--  ?=======================================================
+        ?滿版覆蓋畫面loading狀態
+  ?========================================================= -->
   <template v-if="isLoading">
     <div class="absolute z-50 top-0 left-0 right-0 bottom-0 
     flex items-center justify-center bg-white
@@ -10,8 +12,11 @@
       </div>
     </div>
   </template>
-  <!-- 首頁第一個區塊，pt是為了抵銷nav的fixed top,-mb是為了讓圖片可以超出到下方的區塊 -->
-  <!-- 如果需要修改位移請從src/assets/_utilities.css內修改變數 -->
+  <!-- ?==================================================================
+          ?首頁第一個區塊
+          !pt是為了抵銷nav的fixed top,-mb是為了讓圖片可以超出到下方的區塊
+          !如果需要修改位移請從src/assets/_utilities.css內修改變數 
+  ?=================================================================== -->
   <section class="relative bg-gradient-to-b from-primary-linearlight to-primary-lineardark pt-[68px] lg:pt-20 flex justify-center
     -mb-[var(--offset-banner)] sm:-mb-[var(--offset-banner-sm)] lg:-mb-[var(--offset-banner-lg)] xxl:-mb-[var(--offset-banner-xxl)]
     ">
